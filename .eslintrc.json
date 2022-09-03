@@ -1,0 +1,17 @@
+{
+  "root": true,
+  "extends": "eslint:recommended",
+  "env": {
+    "browser": true
+  },
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-debugger": "warn",
+    "no-var": "error",
+    "no-unused-vars": "warn",
+    "semi": "warn"
+  }
+}
