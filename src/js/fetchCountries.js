@@ -1,14 +1,48 @@
 const BASE_URL = 'https://restcountries.com/v3.1/name/';
 
-function fetchCountries(name) {
-  return fetch(
-    `${BASE_URL}${name}?fields=name,capital,population,flags,languages`
-  ).then(response => {
+export default class SearchCountries {
+  constructor() {
+    this.searchQuery = '';
+  }
+
+  fetchCountries() {
+    return fetch(
+      `${BASE_URL}${this.searchQuery}?fields=name,capital,population,flags,languages`
+    ).then(this.responseFetchResult);
+  }
+
+  responseFetchResult(response) {
     if (!response.ok) {
       throw new Error(response.status);
     }
     return response.json();
-  });
+  }
+
+  // clearMarkup(list, info) {
+  //   list.innerHTML = '';
+  //   info.innerHTML = '';
+  // }
+
+  get data() {
+    return this.searchQuery;
+  }
+
+  set data(newQuery) {
+    this.searchQuery = newQuery;
+  }
 }
 
-export { fetchCountries };
+// ==========================================================================
+
+// function fetchCountries(name) {
+//   return fetch(
+//     `${BASE_URL}${name}?fields=name,capital,population,flags,languages`
+//   ).then(response => {
+//     if (!response.ok) {
+//       throw new Error(response.status);
+//     }
+//     return response.json();
+//   });
+// }
+
+// export { fetchCountries };
