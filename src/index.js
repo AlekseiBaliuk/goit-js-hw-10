@@ -38,8 +38,8 @@ function showCounties(data) {
       'Too many matches found. Please enter a more specific name.'
     );
   }
-  renderInfoMarkup(data);
   renderListMarkup(data);
+  renderInfoMarkup(data);
 }
 
 function renderInfoMarkup(data) {

@@ -4,7 +4,6 @@ export default class SearchCountries {
   constructor() {
     this.searchQuery = '';
   }
-
   fetchCountries() {
     return fetch(
       `${BASE_URL}${this.searchQuery}?fields=name,capital,population,flags,languages`
