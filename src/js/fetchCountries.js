@@ -17,11 +17,6 @@ export default class SearchCountries {
     return response.json();
   }
 
-  // clearMarkup(list, info) {
-  //   list.innerHTML = '';
-  //   info.innerHTML = '';
-  // }
-
   get data() {
     return this.searchQuery;
   }
